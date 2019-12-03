@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using StarWarsApp.Core;
 using static Android.Widget.AdapterView;
 
@@ -28,11 +29,17 @@ namespace StarWarsApp
             var data = await DataServiceMovies.GetStarWarsMovies(queryString);
             moviesListView.Adapter = new StarWarsMoviesAdapter(this, data.Results);
 
-            //moviesListView.ItemClick += (object sender, ItemClickEventArgs e) =>
-            //{
-            //    var a = Convert.ToString(moviesListView.GetItemAtPosition(e.Position)); // Show text
-            //    var bText = Convert.ToString(e.Position); // Show index
-            //};
+            moviesListView.ItemClick += (object sender, ItemClickEventArgs e) =>
+            {
+                var filmdetailsInstance = moviesListView.GetItemAtPosition(e.Position);
+                var clickPositionID = Convert.ToString(e.Position);
+
+                var movieDetails = data.Results[e.Position];
+                var intent = new Intent(this, typeof(movieDetailsActivity));
+                intent.PutExtra("moveDetails", JsonConvert.SerializeObject(movieDetails));
+                StartActivity(intent);
+                
+            };
         }
     }
 }

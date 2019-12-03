@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="movieDetailsActivity.cs" />
     <Compile Include="Movies_Activity.cs" />
     <Compile Include="People_Activity.cs" />
     <Compile Include="Planets_Activity.cs" />
@@ -90,9 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.2</Version>
+      <Version>12.0.3</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StarWarsApp.Core\StarWarsApp.Core.csproj">
@@ -161,7 +162,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Movies_Layout.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\movie_details.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\iconfinder_stormtrooper_1626634.png" />
   </ItemGroup>
