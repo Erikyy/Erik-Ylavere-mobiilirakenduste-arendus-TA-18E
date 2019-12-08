@@ -35,10 +35,6 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -60,18 +56,18 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="movieDetailsActivity.cs" />
-    <Compile Include="Movies_Activity.cs" />
-    <Compile Include="People_Activity.cs" />
-    <Compile Include="Planets_Activity.cs" />
-    <Compile Include="Starships_Activity.cs" />
-    <Compile Include="StarWarsMoviesAdapter.cs" />
-    <Compile Include="StarWarsPeopleAdapter.cs" />
+    <Compile Include="StarWars\FilmsActivity.cs" />
+    <Compile Include="StarWars\FilmsDetailsActivity.cs" />
+    <Compile Include="StarWars\MainActivity.cs" />
+    <Compile Include="StarWars\PeopleActivity.cs" />
+    <Compile Include="StarWars\PlanetsActivity.cs" />
+    <Compile Include="StarWars\Starships_Activity.cs" />
+    <Compile Include="StarWars\StarWarsFilmsAdapter.cs" />
+    <Compile Include="StarWars\StarWarsPeopleAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StarWarsPlanetsAdapter.cs" />
-    <Compile Include="StarWarsStarshipsAdapter.cs" />
+    <Compile Include="StarWars\StarWarsPlanetsAdapter.cs" />
+    <Compile Include="StarWars\StarWarsStarshipsAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -88,12 +84,33 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>2.6.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>2.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StarWarsApp.Core\StarWarsApp.Core.csproj">
@@ -105,24 +122,6 @@
     <AndroidResource Include="Resources\layout\people_row_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\iconfinder_stormtrooper_1626634.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\People_Layout.axml">
@@ -140,6 +139,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\Starships_Layout.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\layout\starships_row_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -150,25 +152,21 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Movies_Layout.axml">
+    <AndroidResource Include="Resources\drawable\StarWars3.jpg" />
+    <AndroidResource Include="Resources\drawable\StarWars2.jpg" />
+    <AndroidResource Include="Resources\drawable\StarWars1.jpg" />
+    <AndroidResource Include="Resources\drawable\StarWars6.jpg" />
+    <AndroidResource Include="Resources\drawable\StarWars5.jpg" />
+    <AndroidResource Include="Resources\drawable\StarWars4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\film_details_layout.xml" />
+    <Content Include="Resources\layout\Film_Layout.axml">
       <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\movies_row_layout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Movies_Layout.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\movie_details.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\iconfinder_stormtrooper_1626634.png" />
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </Content>
+    <AndroidResource Include="Resources\mipmap-hdpi\DarthVader.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\DarthVader.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+        <Button
+            android:text="Star Wars Episode I"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars"
+            />
+        <Button
+            android:text="Star Wars Episode II"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars2"
+            />
+        <Button
+            android:text="Star Wars Episode III "
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars3"
+            />
+
+     
+
+    
+        <Button
+            android:text="Star Wars Episode IV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars4"
+            />
+        <Button
+            android:text="Star Wars Episode V"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars5"
+            />
+        <Button
+            android:text="Star Wars Episode VI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars6"
+            />
+    
+    
+        <Button
+            android:text="Star Wars Episode VII"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@id/btnStarWars7"
+            />
+       
+    
+</LinearLayout>

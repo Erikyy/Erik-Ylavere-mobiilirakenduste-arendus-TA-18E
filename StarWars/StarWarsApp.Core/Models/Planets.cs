@@ -15,9 +15,9 @@ namespace StarWarsApp.Core.Models
     public partial class PlanetsDetails
     {
         public string Name { get; set; }
+        public string Diameter { get; set; }
         public string Rotation_Period { get; set; }
         public string Orbital_Period { get; set; }
-        public string Diameter { get; set; }
         public string Climate { get; set; }
         public string Gravity { get; set; }
         public string Terrain { get; set; }

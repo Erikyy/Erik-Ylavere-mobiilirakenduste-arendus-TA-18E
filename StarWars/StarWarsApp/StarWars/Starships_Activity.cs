@@ -21,16 +21,16 @@ namespace StarWarsApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Starships_Layout);
 
-            var searchBar3 = FindViewById<EditText>(Resource.Id.searchEditTextStarships);
-            var searchButton3 = FindViewById<Button>(Resource.Id.searchButtonStarships);
-            var starshipsListView = FindViewById<ListView>(Resource.Id.starshipsListView);
+            var searchBar = FindViewById<EditText>(Resource.Id.searchEditTextStarships);
+            var searchButton = FindViewById<Button>(Resource.Id.searchButtonStarships);
+            var peopleListView = FindViewById<ListView>(Resource.Id.starshipsListView);
 
-            searchButton3.Click += async delegate
+            searchButton.Click += async delegate
             {
-                string searchWord = searchBar3.Text;
+                string searchWord = searchBar.Text;
                 string queryString = "https://swapi.co/api/starships/?search=" + searchWord;
                 var data = await DataServiceStarships.GetStarWarsStarships(queryString);
-                starshipsListView.Adapter = new StarWarsStarshipsAdapter(this, data.Results);
+                peopleListView.Adapter = new StarWarsStarshipsAdapter(this, data.Results);
 
             };
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,25 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:background="@android:color/white">
+	
 	<Button
-		android:text="People"
+		android:text="Star Wars People Search"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/PeopleButton" />
+		android:id="@+id/toPeopleButton" 
+	    android:backgroundTint="@android:color/darker_gray"/>
 	<Button
-		android:text="Planets"
+		android:text="Star Wars Planets Search"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/PlanetsButton" />
+		android:id="@+id/toPlanetsButton" 
+	    android:backgroundTint="@android:color/darker_gray"/>
 	<Button
-		android:text="Starships"
+		android:text="Star Wars Starships Search"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/StarshipsButton" />
-    <Button
-		android:text="Films"
+		android:id="@+id/toStarshipsButton" 
+	    android:backgroundTint="@android:color/darker_gray"/>
+	<Button
+		android:text="Star Wars Movies List"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/FilmsButton" />
+		android:id="@+id/toMoviesListButton" 
+	    android:backgroundTint="@android:color/darker_gray"/>
 
 </LinearLayout>
