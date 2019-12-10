@@ -1,0 +1,123 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="440px"
+		android:id="@+id/mainImageWrapper"
+		android:gravity="center">
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/mainImageView"/>
+	</LinearLayout >
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="50px"
+		android:id="@+id/textWrapper1">
+
+		<TextView
+		android:text=""
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/textViewMain1"
+		android:textSize="42px"
+		android:gravity="center"/>
+
+		<TextView
+		android:text=""
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/textViewMain2"
+		android:textSize="42px"
+		android:gravity="center" />
+
+
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="290px"
+		android:id="@+id/buttonWrapper1">
+		<Button
+			android:text="People"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:id="@+id/toPeopleButton" />
+
+		<Button
+			android:text="Planets"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:id="@+id/toPlanetsButton" />
+
+	</LinearLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="50px"
+		android:id="@+id/textWrapper2">
+
+			<TextView
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:id="@+id/textViewMain3"
+				android:textSize="42px"
+				android:gravity="center"/>
+
+			<TextView
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:id="@+id/textViewMain4"
+				android:textSize="42px"
+				android:gravity="center" />
+
+
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="290px"
+		android:id="@+id/buttonWrapper2">
+		<Button
+			android:text="Starships"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:id="@+id/toStarshipsButton" />
+		<Button
+			android:text="Movies"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:id="@+id/toMoviesListButton" />
+
+	</LinearLayout>
+
+</LinearLayout>
