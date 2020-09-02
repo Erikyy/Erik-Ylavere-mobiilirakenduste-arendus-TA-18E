@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.LanguagePage"
+             BackgroundColor="Lavender">
+    
+    
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Language" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" Margin="5"></Label>
+            <Button x:Name="AddLanguageBtn" Text="Add Language" WidthRequest="600"></Button>
+            <Editor x:Name="LanguageEditor" Text="" FontSize="24" HorizontalOptions="Center" VerticalOptions="Start" Margin="5" WidthRequest="300"></Editor>
+            <Grid HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="SaveBtn" Text="Save" Clicked="SaveBtn_Clicked" HeightRequest="80"></Button>
+                <Button Grid.Column="1" x:Name="DeleteBtn" Text="Delete" Clicked="DeleteBtn_Clicked" HeightRequest="80"></Button>
+            </Grid>
+
+            <ListView x:Name="Languages_ListView"
+                      ItemsSource="{Binding Languages}"
+                      CachingStrategy="RecycleElement"
+                      ItemTapped="Languages_ListView_ItemTapped">
+
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding .}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <!--Custom View Cells-->
+                <!--
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <ViewCell>
+                      <StackLayout>
+                        <Label Text="{Binding Text}" 
+                               Style="{DynamicResource ListItemTextStyle}" />
+                        <Label Text="{Binding Detail}" 
+                               Style="{DynamicResource ListItemDetailTextStyle}"/>
+                      </StackLayout>
+                    </ViewCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+                -->
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
